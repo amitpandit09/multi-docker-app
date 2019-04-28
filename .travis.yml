@@ -1,0 +1,20 @@
+sudo :required
+services:
+   - docker
+
+before_install:
+   - docker build -t amitpandit09/multi-app -f ./client/Dockerfile.dev ./client
+
+script:
+   - docker run amitpandit09/multi-app npm test -- --coverage
+
+after_success:
+   - docker build -t amitpandit09/multi-client ./client
+   - docker build -t amitpandit09/multi-nginx ./nginx
+   - docker build -t amitpandit09/multi-server ./server
+   - docker build -t amitpanit09/multi-worker ./worker
+   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - docker push amitpandit09/multi-client
+   - docker push amitpandit09/multi-nginx
+   - docker push amitpandit09/multi-server
+   - docker push amitpandit09/multi-worker
