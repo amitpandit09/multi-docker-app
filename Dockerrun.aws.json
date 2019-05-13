@@ -19,7 +19,8 @@
      "name" : "worker",
      "image" : "amitpandit09/multi-worker",
      "hostname" : "worker",
-     "essential" : false
+     "essential" : false,
+     "memory" : 150
     },
     {
      "name" : "nginx",
