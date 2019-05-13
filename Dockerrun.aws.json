@@ -5,22 +5,19 @@
       "name" : "client",
       "image" : "amitpandit09/multi-client",
       "hostname" : "client",
-      "essential": false,
-      "memory" : 200 
+      "essential": false
     },
     {
       "name" : "server",
       "image" : "amitpandit09/multi-server",
       "hostname":"api",
-      "essential" :false,
-      "memory" : 200 
+      "essential" :false
     },
     {
      "name" : "worker",
      "image" : "amitpandit09/multi-worker",
      "hostname" : "worker",
-     "essential" : false,
-     "memory": 200 
+     "essential" : false
     },
     {
      "name" : "nginx",
@@ -33,9 +30,7 @@
        "containerPort" : 80
      }
       ],
-      "links" : ["client","server"],
-      "memory" : 200 
-     
+      "links" : ["client","server"]
     }
   ]
 }
