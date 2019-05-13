@@ -6,21 +6,21 @@
       "image" : "amitpandit09/multi-client",
       "hostname" : "client",
       "essential": false,
-      "memory" : 150
+      "memory" : 250
     },
     {
       "name" : "server",
       "image" : "amitpandit09/multi-server",
       "hostname":"api",
       "essential" :false,
-      "memory": 150
+      "memory": 250
     },
     {
      "name" : "worker",
      "image" : "amitpandit09/multi-worker",
      "hostname" : "worker",
      "essential" : false,
-     "memory" : 150
+     "memory" :250
     },
     {
      "name" : "nginx",
@@ -34,7 +34,7 @@
      }
       ],
       "links" : ["client","server"],
-      "memory": 150
+      "memory": 250
     }
   ]
 }
